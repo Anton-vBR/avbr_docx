@@ -1,0 +1,294 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Classes &mdash; avbr_docx 0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+        <link rel="index" title="Index"
+              href="genindex.html"/>
+        <link rel="search" title="Search" href="search.html"/>
+    <link rel="top" title="avbr_docx 0.1 documentation" href="index.html"/>
+        <link rel="prev" title="avbr_docx’s documentation!" href="index.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> avbr_docx
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Classes</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#avbr-docx-newdocument-class">avbr_docx.NewDocument class</a></li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="index.html">avbr_docx</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="index.html">Docs</a> &raquo;</li>
+      
+    <li>Classes</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="classes">
+<h1>Classes<a class="headerlink" href="#classes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="avbr-docx-newdocument-class">
+<h2>avbr_docx.NewDocument class<a class="headerlink" href="#avbr-docx-newdocument-class" title="Permalink to this headline">¶</a></h2>
+<dl class="class">
+<dt id="avbr_docx.NewDocument">
+<em class="property">class </em><code class="descclassname">avbr_docx.</code><code class="descname">NewDocument</code><span class="sig-paren">(</span><em>name='mydocx'</em><span class="sig-paren">)</span><a class="headerlink" href="#avbr_docx.NewDocument" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get directions between locations</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<li><strong>origin</strong> – Origin location - string address; (latitude, longitude)
+two-tuple, dict with (“lat”, “lon”) keys or object with (lat, lon)
+attributes</li>
+<li><strong>destination</strong> – Destination location - type same as origin</li>
+<li><strong>mode</strong> – Travel mode as string, defaults to “driving”.
+See <a class="reference external" href="https://developers.google.com/maps/documentation/directions/#TravelModes">google docs details</a></li>
+<li><strong>alternatives</strong> – True if provide it has to return more then one
+route alternative</li>
+<li><strong>waypoints</strong> – <p>Iterable with set of intermediate stops,
+like (“Munich”, “Dallas”)
+See <a class="reference external" href="https://developers.google.com/maps/documentation/javascript/reference#DirectionsRequest">google docs details</a></p>
+</li>
+<li><strong>optimize_waypoints</strong> – <p>if true will attempt to re-order supplied
+waypoints to minimize overall cost of the route. If waypoints are
+optimized, the route returned will show the optimized order under
+“waypoint_order”. See <a class="reference external" href="https://developers.google.com/maps/documentation/javascript/reference#DirectionsRequest">google docs details</a></p>
+</li>
+<li><strong>avoid</strong> – <p>Iterable with set of restrictions,
+like (“tolls”, “highways”). For full list refer to
+<a class="reference external" href="https://developers.google.com/maps/documentation/directions/#Restrictions">google docs details</a></p>
+</li>
+<li><strong>language</strong> – The language in which to return results.
+See <a class="reference external" href="https://developers.google.com/maps/faq#languagesupport">list of supported languages</a></li>
+<li><strong>units</strong> – <p>Unit system for result. Defaults to unit system of
+origin’s country.
+See <a class="reference external" href="https://developers.google.com/maps/documentation/directions/#UnitSystems">google docs details</a></p>
+</li>
+<li><strong>region</strong> – The region code. Affects geocoding of origin and
+destination (see <cite>gmaps.Geocoding.geocode</cite> region parameter)</li>
+<li><strong>departure_time</strong> – Desired time of departure as
+seconds since midnight, January 1, 1970 UTC</li>
+<li><strong>arrival_time</strong> – Desired time of arrival for transit directions as
+seconds since midnight, January 1, 1970 UTC.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="avbr_docx.NewDocument.addHeading">
+<code class="descname">addHeading</code><span class="sig-paren">(</span><em>string</em>, <em>level=1</em>, <em>insertPoint=False</em><span class="sig-paren">)</span><a class="headerlink" href="#avbr_docx.NewDocument.addHeading" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores a dictionary of category heading to self.docdata.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="avbr_docx.NewDocument.addMultiText">
+<code class="descname">addMultiText</code><span class="sig-paren">(</span><em>textobjs</em>, <em>insertPoint=False</em><span class="sig-paren">)</span><a class="headerlink" href="#avbr_docx.NewDocument.addMultiText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores a dictionary of category multitext to self.docdata.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="avbr_docx.NewDocument.addPicture">
+<code class="descname">addPicture</code><span class="sig-paren">(</span><em>path</em>, <em>width=5760720</em>, <em>insertPoint=False</em><span class="sig-paren">)</span><a class="headerlink" href="#avbr_docx.NewDocument.addPicture" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores a dictionary of category picture to self.docdata.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="avbr_docx.NewDocument.addText">
+<code class="descname">addText</code><span class="sig-paren">(</span><em>textobj</em>, <em>insertPoint=False</em><span class="sig-paren">)</span><a class="headerlink" href="#avbr_docx.NewDocument.addText" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stores a dictionary of category text to self.docdata.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="avbr_docx.NewDocument.getInsertPoint">
+<code class="descname">getInsertPoint</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#avbr_docx.NewDocument.getInsertPoint" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns current length to be used as InsertPoint</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="avbr_docx.NewDocument.save">
+<code class="descname">save</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#avbr_docx.NewDocument.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loops through all items in self.docdata and adds them to the self.doc (python-docx) object.
+Then saves document with name self.name</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="index.html" class="btn btn-neutral" title="avbr_docx’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2017, Anton van Berlekom Ravandoni.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
